@@ -5,11 +5,11 @@ while opcion != 6:
     if opcion == 1:
         opcion1(recetas)
     elif opcion == 2:
-        opcion2()
+        opcion2(recetas)
     elif opcion == 3:
-        opcion3()
+        opcion3(recetas)
     elif opcion == 4:
-        opcion4()
+        opcion4(recetas)
     elif opcion == 5:
         opcion5()
     else:
