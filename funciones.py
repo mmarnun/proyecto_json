@@ -45,6 +45,17 @@ def opcion3(recetas):
     print()
     tiempo1 = int(input("Introduce un primer valor mínimo (en minutos): "))
     tiempo2 = int(input("Introduce un segundo valor máximo (en minutos): "))
+    flag = True
+    for receta in recetas:
+        duracion = sum(receta["timers"])
+        if tiempo1 <= duracion <= tiempo2:
+            print(receta["name"])
+            flag = True
+        else:
+            flag = False
+    if flag == False:
+        print("No hay recetas que duren entre el intervalo de tiempo intro")
+
 
 def opcion4(recetas):
     print()
@@ -55,7 +66,7 @@ def opcion4(recetas):
             if i["name"].lower() == ingrediente.lower():
                 if ingrediente.lower() not in recetas_con_ingrediente:
                     recetas_con_ingrediente.append(receta["name"])
-                print(ingrediente,"es un ingrediente de tipo",i['type'],"y se utiliza en la receta:",receta['name'])
+                print("-",ingrediente,"es un ingrediente de tipo",i['type'],"y se utiliza en la receta:",receta['name'])
     if not recetas_con_ingrediente:
         print("No se encontraron recetas con el ingrediente:",ingrediente)
     print()
