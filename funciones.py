@@ -12,7 +12,7 @@ def menu():
     print("2. Listar los nombres de las recetas y la cantidad de ingredientes")
     print("3. Mostrar el nombre de la receta en tiempo de elaboración")
     print("4. Ingrediente, tipo y recetas en el que se usa")
-    print("5. NOSE")
+    print("5. Muestra información sobre la receta en un formato ordenado.")
     print("6. Salir")
     print("-------------------------------------------------------------------")
     opcion = int(input("Opción deseada: "))
@@ -45,16 +45,16 @@ def opcion3(recetas):
     print()
     tiempo1 = int(input("Introduce un primer valor mínimo (en minutos): "))
     tiempo2 = int(input("Introduce un segundo valor máximo (en minutos): "))
-    flag = True
+    flag = False
     for receta in recetas:
         duracion = sum(receta["timers"])
         if tiempo1 <= duracion <= tiempo2:
             print(receta["name"])
             flag = True
-        else:
-            flag = False
     if flag == False:
-        print("No hay recetas que duren entre el intervalo de tiempo intro")
+        print()
+        print("No hay recetas que duren entre el intervalo de tiempo introducido.")
+    print()
 
 
 def opcion4(recetas):

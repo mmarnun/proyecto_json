@@ -11,7 +11,7 @@ while opcion != 6:
     elif opcion == 4:
         opcion4(recetas)
     elif opcion == 5:
-        opcion5()
+        opcion5(recetas)
     else:
         erroropcion()
     opcion = menu()
